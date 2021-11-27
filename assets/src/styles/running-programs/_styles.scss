@@ -6,6 +6,9 @@
     }
     .container {
         display: flex;
+        @media only screen and (max-width: 640px) {
+            flex-direction: column;
+        }
     }
     .content {
         max: {
@@ -13,6 +16,11 @@
         }
         margin: {
             left: susanoo.rem-calc(24);
+        }
+        @media only screen and (max-width: 640px) {
+            max: {
+                width: unset;
+            }
         }
     }
 }
