@@ -49,3 +49,13 @@ h6 {
         size: clamp(#{susanoo.rem-calc(map-get(variables.$headline-min-sizes, "h5"))}, 4vw, #{susanoo.rem-calc(map-get(variables.$headline-max-sizes, "h5"))});
     }
 }
+
+.key-headline {
+    > span {
+        font: {
+            size: clamp(#{susanoo.rem-calc(14)}, 2vw, #{susanoo.rem-calc(18)});;
+            weight: normal;
+        }
+        letter-spacing: 2px;
+    }
+}
