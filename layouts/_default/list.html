@@ -1,6 +1,8 @@
 {{ define "header" }}
     {{ partial "header.html" . }}
+    {{ partial "sections/staging.html" . }}
+    {{ partial "sections/cards.html" . }}
 {{ end }}
 {{ define "content" }}
-
+    {{ partial "sections/running-programs" . }}
 {{ end }}

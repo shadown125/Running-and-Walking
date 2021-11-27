@@ -1,0 +1,94 @@
+@use '../susanoo';
+@use '../lists';
+
+.cards-grid {
+    margin: {
+        top: susanoo.rem-calc(-160);
+    }
+    background: {
+        color: transparent;
+    }
+}
+
+.cards {
+    --primary-color: rgb(77, 77, 77);
+
+    @include lists.reset-list();
+    display: grid;
+    grid: {
+        template: {
+            columns: repeat(auto-fit, minmax(min(#{susanoo.rem-calc(221)}, 100%), 1fr));
+        }
+        gap: susanoo.rem-calc(20)
+    }
+    color: var(--primary-color);
+    .panel {
+        display: flex;
+        flex: {
+            direction: column;
+        }
+        align-items: center;
+        background: {
+            color: white;
+        }
+        padding: susanoo.rem-calc(24) susanoo.rem-calc(32);
+        z-index: 2;
+    }
+    li {
+        --margin: #{susanoo.rem-calc(100)};
+
+        @include susanoo.breakpoint(large-m) {
+            &:nth-child(even) {
+                margin: {
+                    top: calc(var(--margin) / -1);
+                    bottom: var(--margin);
+                }
+            }
+        }
+    }
+    .icon {
+        --circle: #{susanoo.rem-calc(80)};
+
+        width: var(--circle);
+        height: var(--circle);
+        border: {
+            radius: 50%;
+        }
+        background: {
+            color: #d9d9d9;
+        }
+        margin: {
+            bottom: susanoo.rem-calc(16)
+        }
+        background: {
+            repeat: no-repeat;
+            position: center;
+        }
+        &.icon-running {
+            background: {
+                image: url("/running-and-walking-stagingIcon1.jpg");
+            }
+        }
+        &.icon-medal {
+            background: {
+                image: url("/running-and-walking-stagingIcon2.jpg");
+            }
+        }
+        &.icon-coaching {
+            background: {
+                image: url("/running-and-walking-stagingIcon3.jpg");
+            }
+        }
+        &.icon-events {
+            background: {
+                image: url("/running-and-walking-stagingIcon4.jpg");
+            }
+        }
+        > span {
+            display: none;
+        }
+    }
+    .headline {
+        letter-spacing: 2px;
+    }
+}
