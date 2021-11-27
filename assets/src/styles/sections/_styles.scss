@@ -3,11 +3,11 @@
 
 section,
 .section {
-    padding: susanoo.rem-calc(64) susanoo.rem-calc(32);
+    padding: susanoo.rem-calc(48) susanoo.rem-calc(32);
     background: {
         color: variables.$background-color;
     }
     @media only screen and (max-width: 640px) {
-        padding: susanoo.rem-calc(80) susanoo.rem-calc(46);
+        padding: susanoo.rem-calc(32);
     }
 }
