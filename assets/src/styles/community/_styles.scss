@@ -1,0 +1,44 @@
+@use '../susanoo';
+
+.community {
+    color: #333333;
+    padding: {
+        top: susanoo.rem-calc(200);
+    }
+    background: {
+        color: #e0e5eb;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cards {
+        grid: {
+            gap: susanoo.rem-calc(40);
+        }
+    }
+    .content {
+        display: flex;
+        justify-content: space-between;
+        margin: {
+            top: susanoo.rem-calc(72);
+        }
+        gap: susanoo.rem-calc(48);
+        @media only screen and (max-width: 640px) {
+            flex-direction: column;
+            gap: susanoo.rem-calc(24);
+        }
+        p {
+            max: {
+                width: 50%;
+            }
+            @media only screen and (max-width: 640px) {
+                order: 1;
+                max: {
+                    width: unset;
+                }
+            }
+        }
+    }
+}
