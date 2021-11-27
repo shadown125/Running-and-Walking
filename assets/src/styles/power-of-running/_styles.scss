@@ -1,0 +1,54 @@
+@use '../susanoo';
+@use '../lists';
+
+.power-of-running {
+    background: {
+        color: #e5588b;
+    }
+    .cards-gallery {
+        @include lists.reset-list();
+        display: grid;
+        grid: {
+            template: {
+                columns: repeat(auto-fit, minmax(min(#{susanoo.rem-calc(400)}, 100%), 1fr));
+            }
+            gap: susanoo.rem-calc(24);
+        }
+    }
+    li {
+        background: {
+            color: white;
+        }
+        box-shadow: 0 1.5625rem 4.375rem 0 rgb(0 0 0 / 50%);
+        * {
+            color: black;
+        }
+        .headline {
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .content {
+        padding: susanoo.rem-calc(48);
+    }
+    .introduction-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: {
+            direction: column;
+        }
+        p {
+            font: {
+                style: italic;
+                size: susanoo.rem-calc(22);
+            }
+            margin: {
+                bottom: susanoo.rem-calc(48);
+            }
+        }
+    }
+}
