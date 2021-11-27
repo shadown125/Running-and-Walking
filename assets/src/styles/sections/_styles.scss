@@ -1,0 +1,9 @@
+@use '../susanoo';
+
+section,
+.section {
+    padding: susanoo.rem-calc(64) susanoo.rem-calc(32);
+    @media only screen and (max-width: 640px) {
+        padding: susanoo.rem-calc(80) susanoo.rem-calc(46);
+    }
+}
