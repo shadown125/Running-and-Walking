@@ -44,6 +44,12 @@ h6 {
     }
 }
 
+.h5 {
+    font: {
+        size: clamp(#{susanoo.rem-calc(map-get(variables.$headline-min-sizes, "h5"))}, 4vw, #{susanoo.rem-calc(map-get(variables.$headline-max-sizes, "h5"))});
+    }
+}
+
 .key-headline {
     > span {
         font: {
