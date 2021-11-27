@@ -1,0 +1,18 @@
+@use '../susanoo';
+
+.running-programs {
+    padding: {
+        bottom: susanoo.rem-calc(240);
+    }
+    .container {
+        display: flex;
+    }
+    .content {
+        max: {
+            width: 50%;
+        }
+        margin: {
+            left: susanoo.rem-calc(24);
+        }
+    }
+}
