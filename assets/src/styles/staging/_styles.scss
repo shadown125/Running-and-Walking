@@ -1,0 +1,13 @@
+@use '../susanoo';
+
+.staging {
+    --height: #{susanoo.rem-calc(660)};
+
+    background: {
+        image: url("/running-and-walking-staging.jpg");
+        size: cover;
+        repeat: no-repeat;
+    }
+    object-fit: cover;
+    min-height: var(--height);
+}
