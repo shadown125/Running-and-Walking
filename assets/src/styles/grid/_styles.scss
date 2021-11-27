@@ -6,6 +6,9 @@ body {
         family: variables.$font-family;
     }
     color: variables.$color;
+    background: {
+        color: variables.$background-color;
+    }
 }
 
 .wrapper {
