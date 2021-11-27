@@ -1,0 +1,79 @@
+@use '../susanoo';
+@use '../lists';
+@use '../icons';
+@use 'variables';
+
+.footer {
+    padding: susanoo.rem-calc(30) susanoo.rem-calc(20);
+    background: {
+        color: variables.$background-color;
+    }
+    color: white;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media only screen and (max-width: 640px) {
+            flex: {
+                direction: column;
+            }
+        }
+    }
+    .social-list {
+        @include lists.reset-list();
+        display: flex;
+        flex: {
+            wrap: wrap;
+        }
+        gap: susanoo.rem-calc(20) 0;
+        @media only screen and (max-width: 640px) {
+            margin: {
+                top: susanoo.rem-calc(24);
+            }
+        }
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        a {
+            text-decoration: none;
+            position: relative;
+            &::before {
+                @include susanoo.icon(null, true);
+                color: variables.$icon-color;
+                padding: susanoo.rem-calc(16);
+                font: {
+                    size: map-get(icons.$icon-sizes, "small");
+                }
+                transition: color .2s ease;
+                @include susanoo.breakpoint(large-m) {
+                    font: {
+                        size: map-get(icons.$icon-sizes, "default");
+                    }
+                }
+            }
+            &:hover {
+                &::before {
+                    color: var(--color-on-primary);
+                }
+            }
+        }
+        .github {
+            &::before {
+                @include susanoo.icon(icons.$icon-github, false);
+            }
+        }
+        .twitter {
+            &::before {
+                @include susanoo.icon(icons.$icon-twitter, false);
+            }
+        }
+        .linkedin {
+            &::before {
+                @include susanoo.icon(icons.$icon-linkedin, false);
+            }
+        }
+    }
+}
