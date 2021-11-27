@@ -1,4 +1,5 @@
 @use '../susanoo';
+@use 'variables';
 
 button {
     background: {
@@ -21,5 +22,41 @@ button {
         }
         letter-spacing: 4px;
         box-shadow: inset 0 -3px 0 0 black;
+    }
+    &-primary {
+        padding: susanoo.rem-calc(16) susanoo.rem-calc(48);
+        border: 2px solid white;
+        font: {
+            size: susanoo.rem-calc(22);
+        }
+        letter-spacing: 4px;
+        margin: {
+            top: susanoo.rem-calc(24);
+        }
+        position: relative;
+        color: variables.$button-primary-color;
+        transition: all 0.3s linear;
+        overflow: hidden;
+        &:hover {
+            background: {
+                color: variables.$button-primary-hover-background-color;
+            }
+            &::before {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            background: {
+                color: variables.$button-primary-before-background-color;
+            }
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: susanoo.rem-calc(16);
+            transform: translateX(-100%) rotate(45deg);
+            transition: all 0.3s linear;
+        }
     }
 }
