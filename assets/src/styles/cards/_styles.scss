@@ -31,8 +31,18 @@
         background: {
             color: white;
         }
+        height: 100%;
         padding: susanoo.rem-calc(24) susanoo.rem-calc(32);
-        z-index: 2;
+    }
+    p {
+        margin: {
+            bottom: susanoo.rem-calc(24);
+        }
+    }
+    .button {
+        margin: {
+            top: auto;
+        }
     }
     li {
         --margin: #{susanoo.rem-calc(100)};
